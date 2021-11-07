@@ -19,7 +19,7 @@ class ClientsViewSet(viewsets.ModelViewSet):
     search_fields = ['nome']
     ordering_fields = ['data_nascimento']
     
-class ClientesPorSexo(generics.ListAPIView):
+class ClientsByGender(generics.ListAPIView):
     def get_serializer_class(self):
         if self.request.version == 'v2':
             return ClienteSerializerV2
@@ -35,7 +35,7 @@ class ClientesPorSexo(generics.ListAPIView):
     search_fields = ['nome']
     ordering_fields = ['data_nascimento']
 
-class ClientesPorEstado(generics.ListAPIView):
+class ClientsByState(generics.ListAPIView):
     def get_serializer_class(self):
         if self.request.version == 'v2':
             return ClienteSerializerV2
@@ -51,7 +51,7 @@ class ClientesPorEstado(generics.ListAPIView):
     search_fields = ['nome']
     ordering_fields = ['data_nascimento']
 
-class ClientesPorCpf(generics.ListAPIView):
+class ClientsByCPF(generics.ListAPIView):
     def get_serializer_class(self):
         if self.request.version == 'v2':
             return ClienteSerializerV2
