@@ -37,7 +37,7 @@ class ClienteSerializerV2(serializers.ModelSerializer):
             raise serializers.ValidationError({'nome': 'The name cannot contain numbers'})
 
         if not valid_cpf(data['cpf']):
-            raise serializers.ValidationError({'cpf':'Invalid CPF. Should have 11 digits and no dots . or -'})
+            raise serializers.ValidationError({'cpf':'Invalid CPF. Must have 11 digits and no dots . or -'})
 
         if not valid_rg(data['rg']):
             raise serializers.ValidationError({'rg':'Invalid RG, must have 9 digits.'})
