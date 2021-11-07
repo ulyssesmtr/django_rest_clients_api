@@ -5,8 +5,8 @@ django.setup()
 
 from faker import Faker
 from validate_docbr import CPF
-import random, datetime
-from clients_api.models import Cliente
+import random
+from clients_api.models import Client
 
 def creating_clients(quantity):
     fake = Faker('pt_BR')
@@ -25,7 +25,7 @@ def creating_clients(quantity):
         numero_celular = f'{random.randrange(10,55)} 9{random.randrange(1000,9999)}-{random.randrange(1000,9999)}'
         estado = random.choice(states)
         sexo = random.choice(['M', 'F'])
-        c = Cliente.objects.create(nome=nome, rg=rg, cpf=cpf, data_nascimento=data_nascimento, numero_celular=numero_celular, estado=estado, sexo=sexo)
+        c = Client.objects.create(nome=nome, rg=rg, cpf=cpf, data_nascimento=data_nascimento, numero_celular=numero_celular, estado=estado, sexo=sexo)
         c.save()
 
 creating_clients(500)
