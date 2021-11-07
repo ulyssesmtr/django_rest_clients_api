@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from rest_framework import  viewsets, generics
-from clients_api.models import Cliente
+from clients_api.models import Client
 from clients_api.serializer import ClienteSerializer, ClienteSerializerV2
 
 from rest_framework import filters
 
 class ClientesViewSet(viewsets.ModelViewSet):
-    queryset = Cliente.objects.all()
+    queryset = Client.objects.all()
 
     def get_serializer_class(self):
         if self.request.version == 'v2':
@@ -28,7 +28,7 @@ class ClientesPorSexo(generics.ListAPIView):
   
     def get_queryset(self):
         sex = self.kwargs['gender']
-        queryset = Cliente.objects.filter(sexo=sex)
+        queryset = Client.objects.filter(sexo=sex)
         return queryset
     
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
@@ -44,7 +44,7 @@ class ClientesPorEstado(generics.ListAPIView):
 
     def get_queryset(self):
         state = self.kwargs['state']
-        queryset = Cliente.objects.filter(estado=state)
+        queryset = Client.objects.filter(estado=state)
         return queryset
 
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
@@ -60,7 +60,7 @@ class ClientesPorCpf(generics.ListAPIView):
 
     def get_queryset(self):
         cpf = self.kwargs['cpf']
-        queryset = Cliente.objects.filter(cpf=cpf)
+        queryset = Client.objects.filter(cpf=cpf)
         return queryset
 
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]

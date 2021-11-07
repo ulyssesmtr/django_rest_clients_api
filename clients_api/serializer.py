@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from clients_api.models import Cliente
+from clients_api.models import Client
 from clients_api.validator import *
 
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Cliente
+        model = Client
         fields = ['id', 'nome', 'cpf', 'data_nascimento', 'estado', 'sexo']
 
     def validate(self, data):
@@ -28,7 +28,7 @@ class ClienteSerializer(serializers.ModelSerializer):
         
 class ClienteSerializerV2(serializers.ModelSerializer):
     class Meta:
-        model = Cliente
+        model = Client
         fields = ['id','nome', 'rg', 'cpf', 'data_nascimento', 'numero_celular', 'estado', 'sexo']
 
     def validate(self, data):
