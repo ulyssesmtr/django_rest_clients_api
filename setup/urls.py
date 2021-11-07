@@ -4,7 +4,7 @@ from drf_yasg import openapi
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from clients_api.views import ClientesViewSet, ClientesPorSexo, ClientesPorEstado, ClientesPorCpf
+from clients_api.views import ClientsViewSet, ClientesPorSexo, ClientesPorEstado, ClientesPorCpf
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -21,7 +21,7 @@ schema_view = get_schema_view(
 
 router = routers.DefaultRouter()
 
-router.register('clients', ClientesViewSet, basename='Clients')
+router.register('clients', ClientsViewSet, basename='Clients')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

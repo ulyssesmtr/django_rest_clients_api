@@ -5,7 +5,7 @@ from clients_api.serializer import ClienteSerializer, ClienteSerializerV2
 
 from rest_framework import filters
 
-class ClientesViewSet(viewsets.ModelViewSet):
+class ClientsViewSet(viewsets.ModelViewSet):
     queryset = Client.objects.all()
 
     def get_serializer_class(self):
