@@ -10,7 +10,7 @@ Documentation: https://drf-clients-api.herokuapp.com/doc
 
 #### Endpoints
 
-GET /clients -> Display all the clients data stored in the database.
+GET /clients -> Display all the clients data registered in the database.
 
 
 POST /clients -> Create a new client.
