@@ -50,7 +50,7 @@ two more fields will be displayed for each client: RG and cellphone number.
 #### Validation
 
 When creating a new client using  POST, each field has its own validation criteria, 
-which is necessary to be respected in order for the creation to work.
+which must be respected in order for the creation to work.
 
 
 
