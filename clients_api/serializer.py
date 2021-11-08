@@ -13,13 +13,13 @@ class ClienteSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({'nome': 'The name cannot contain numbers'})
 
         if not valid_cpf(data['cpf']):
-            raise serializers.ValidationError({'cpf':'Invalid CPF. Should have 11 digits and no dots . or -'})
+            raise serializers.ValidationError({'cpf':'Invalid CPF. Should have 11 digits and no dots . or -. Use a CPF generator.'})
         
         if not valid_date(data['data_nascimento']):
             raise serializers.ValidationError({'data_nascimento':'Date should be a previous date from the date of creation.'})
         
         if not valid_state(data['estado']):
-            raise serializers.ValidationError({'estado':'Should be one in the state list'})
+            raise serializers.ValidationError({'estado':"Should be one of Brazil's States"})
         
         if not valid_sex(data['sexo']):
             raise serializers.ValidationError({'sexo':'Should be either M or F'})
@@ -37,7 +37,7 @@ class ClienteSerializerV2(serializers.ModelSerializer):
             raise serializers.ValidationError({'nome': 'The name cannot contain numbers'})
 
         if not valid_cpf(data['cpf']):
-            raise serializers.ValidationError({'cpf':'Invalid CPF. Must have 11 digits and no dots . or -'})
+            raise serializers.ValidationError({'cpf':'Invalid CPF. Must have 11 digits and no dots . or -. Use a CPF generator.'})
 
         if not valid_rg(data['rg']):
             raise serializers.ValidationError({'rg':'Invalid RG, must have 9 digits.'})
@@ -49,7 +49,7 @@ class ClienteSerializerV2(serializers.ModelSerializer):
             raise serializers.ValidationError({'numero_celular': 'Should follow this pattern: XX XXXXX-XXXX'})
         
         if not valid_state(data['estado']):
-            raise serializers.ValidationError({'estado':'Should be one in the state list'})
+            raise serializers.ValidationError({'estado':"Should be one of Brazil's States"})
         
         if not valid_sex(data['sexo']):
             raise serializers.ValidationError({'sexo':'Should be either M or F'})

@@ -8,7 +8,7 @@ from clients_api.views import ClientsViewSet, ClientsByGender, ClientsByState, C
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Snippets API",
+      title="Clients API",
       default_version='v1',
       description="Client data provider",
       terms_of_service="#",
@@ -24,7 +24,7 @@ router = routers.DefaultRouter()
 router.register('clients', ClientsViewSet, basename='Clients')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('control/', admin.site.urls),
     path('', include(router.urls)),
     path('clients/gender_filter/<str:gender>', ClientsByGender.as_view()),
     path('clients/state_filter/<str:state>', ClientsByState.as_view()),
