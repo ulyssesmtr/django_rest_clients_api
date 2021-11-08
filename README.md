@@ -44,7 +44,7 @@ clientes are registered, only 100 will be displayed per page.
 
 #### Query Parameter Versioning
 
-This api has 2 versions. When adding the query parameter "?version=v2" to the URL,
+This API has 2 versions. When adding the query parameter "?version=v2" to the URL,
 two more fields will be displayed for each client: RG and cellphone number.
 
 #### Validation
